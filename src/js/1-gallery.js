@@ -1,5 +1,3 @@
-'use strict';
-
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
@@ -87,9 +85,8 @@ const galleryItemsHTML = images.map(({ preview, original, description }) => {
 
 galleryContainer.innerHTML = galleryItemsHTML;
 
-let gallery = new SimpleLightbox('.gallery a');
-gallery.on('show.simplelightbox', () => {
-  console.log('Lightbox is opened')
+let gallery = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250
 });
-
 
